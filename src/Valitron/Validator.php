@@ -369,7 +369,21 @@ class Validator
     {
         return preg_match($params[0], $value);
     }
-
+    
+    
+    /**
+     * Validate that a field has no whitespace
+     *
+     * @param  string  $field
+     * @param  mixed   $value
+     * @return bool
+     */
+    protected function validateNoWhitespace($field, $value)
+    {
+        return !preg_match('#\s#', $value);
+    }
+    
+    
     /**
      * Validate that a field is a valid date
      *
